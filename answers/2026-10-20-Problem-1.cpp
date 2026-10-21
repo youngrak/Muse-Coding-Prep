@@ -9,7 +9,7 @@ int searchRotated(const std::vector<int>& values, int target) {
     if (values[mid] == target) return mid;
 
     // left part sorted
-    if (values[left] < values[mid]) {
+    if (values[left] <= values[mid]) {
       // target value in left half
       if (values[left] <= target && target < values[mid]) {
         // search left
