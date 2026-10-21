@@ -1,5 +1,5 @@
 std::string firstUniqueCode(const std::vector<std::string>& codes) {
-  unordered_map<std::string, unsigned int count> code_count;
+  unordered_map<std::string, unsigned int> code_count;
   for (const std::string& code : codes) {
     code_count[code]++;
   }
