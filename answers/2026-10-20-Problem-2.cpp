@@ -1,12 +1,11 @@
 std::string firstUniqueCode(const std::vector<std::string>& codes) {
-  std::string first_unique_code = "";
-  unordered_map<std::string, unsigned int count> map;
-  for (unsigned int i = 0 ; i < codes.size() ; i++) {
-    map[codes[i]]++;
+  unordered_map<std::string, unsigned int count> code_count;
+  for (const std::string& code : codes) {
+    code_count[code]++;
   }
-  for (unsigned int j = 0 ; j < map.size() ; j++) {
-    if (map[j].second == 1) {
-      return map[j].first;
+  for (const std::string& code : codes) {
+    if (code_count[code] == 1) {
+      return code;
     }
   }
   return "";
